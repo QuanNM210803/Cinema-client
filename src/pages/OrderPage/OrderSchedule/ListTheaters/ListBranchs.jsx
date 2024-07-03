@@ -3,7 +3,7 @@ import { SimpleTreeView } from '@mui/x-tree-view/SimpleTreeView'
 import { TreeItem2 } from '@mui/x-tree-view/TreeItem2'
 import Box from '@mui/material/Box'
 import ListSchedule from './ListSchedules/ListSchedule'
-import { getListBranchByAreaIdAPI, getListBranchClientAPI } from '~/apis/branchApi'
+import { getListBranchClientAPI } from '~/apis/branchApi'
 import { CircularProgress, Typography } from '@mui/material'
 
 const CustomTreeItem = React.forwardRef((props, ref) => (
@@ -39,7 +39,7 @@ function ListBranchs({ area_id, orderSchedule, movieId }) {
 			.finally(() =>
 				setLoading(false)
 			)
-	}, [area_id])
+	}, [area_id, movieId])
 
 	return (
 		<SimpleTreeView
